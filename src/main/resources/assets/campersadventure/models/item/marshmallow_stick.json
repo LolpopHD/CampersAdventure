@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "campersadventure:item/marshmallow_stick",
+    "layer1": "campersadventure:item/marshmallow_stick_top"
+  }
+}
