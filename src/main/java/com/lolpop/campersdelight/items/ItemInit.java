@@ -17,7 +17,7 @@ public class ItemInit {
     public static final Item MARSHMALLOW = new MarshmallowItem(new FabricItemSettings().group(ItemGroup.FOOD), 1);
     public static final Item MARSHMALLOW_STICK = new MarshmallowItem(new FabricItemSettings().group(ItemGroup.FOOD), 1).giveStick();
     public static final Item MARSHMALLOW_MELTY = new MarshmallowItem(new FabricItemSettings().group(ItemGroup.FOOD), 2).giveStick();
-    public static final Item BACKPACK = new BackpackItem(new FabricItemSettings().group(ItemGroup.MISC));
+    public static final Item BACKPACK = new BackpackItem(BlockInit.BACKPACK, new FabricItemSettings().group(ItemGroup.MISC));
 
     public static void register(String path, Item item) {
         Registry.register(Registry.ITEM, new Identifier(CampersAdventure.MODID, path), item);
