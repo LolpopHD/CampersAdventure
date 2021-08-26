@@ -11,7 +11,7 @@ import net.minecraft.util.registry.Registry;
 public class BlockInit {
 
     public static final Block CHILLICROP = new ChilliCropBlock(AbstractBlock.Settings.of(Material.PLANT).nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-    public static final Block BACKPACK = new BackpackBlock(AbstractBlock.Settings.of(Material.WOOD));
+    public static final Block BACKPACK = new BackpackBlock(AbstractBlock.Settings.of(Material.WOOD).nonOpaque());
 
     public static void register(String path, Block block) {
         Registry.register(Registry.BLOCK, new Identifier(CampersAdventure.MODID, path), block);

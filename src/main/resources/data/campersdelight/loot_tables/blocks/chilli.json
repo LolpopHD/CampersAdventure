@@ -10,11 +10,11 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "campersadventure:chilli",
+              "name": "campersdelight:chilli",
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "campersadventure:chilli",
+                  "block": "campersdelight:chilli",
                   "properties": {
                     "age": "7"
                   }
@@ -23,7 +23,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "campersadventure:chilli_seeds"
+              "name": "campersdelight:chilli_seeds"
             }
           ]
         }
@@ -35,7 +35,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "campersadventure:chilli_seeds",
+          "name": "campersdelight:chilli_seeds",
           "functions": [
             {
               "function": "minecraft:apply_bonus",
@@ -52,7 +52,7 @@
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "campersadventure:chilli",
+          "block": "campersdelight:chilli",
           "properties": {
             "age": "7"
           }

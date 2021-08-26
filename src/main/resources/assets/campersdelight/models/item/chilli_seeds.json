@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "campersadventure:item/chilli_seeds"
+    "layer0": "campersdelight:item/chilli_seeds"
   }
 }

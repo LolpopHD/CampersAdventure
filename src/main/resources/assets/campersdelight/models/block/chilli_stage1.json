@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/crop",
   "textures": {
-    "crop": "campersadventure:block/chilli_stage1"
+    "crop": "campersdelight:block/chilli_stage1"
   }
 }

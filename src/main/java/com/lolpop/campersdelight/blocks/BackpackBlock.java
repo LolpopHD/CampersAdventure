@@ -1,11 +1,9 @@
 package com.lolpop.campersdelight.blocks;
 
 import com.lolpop.campersdelight.items.ItemInit;
+import com.lolpop.campersdelight.utils.VoxelShapeStuff;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.ShulkerBoxBlockEntity;
-import net.minecraft.block.enums.ChestType;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
@@ -23,6 +21,8 @@ import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 public class BackpackBlock extends BlockWithEntity implements Waterloggable{
@@ -30,6 +30,15 @@ public class BackpackBlock extends BlockWithEntity implements Waterloggable{
     public static final DirectionProperty FACING;
     public static final BooleanProperty WATERLOGGED;
     public static final Identifier CONTENTS;
+
+    public static final VoxelShape SHAPE = VoxelShapeStuff.combineVoxelShapes(
+            VoxelShapeStuff.betterShape(4, 0, 7, 12 ,10, 11),
+            VoxelShapeStuff.betterShape(4, 6, 6, 12 ,10, 7),
+            VoxelShapeStuff.betterShape(7, 3, 6, 9 ,6, 7),
+            VoxelShapeStuff.betterShape(4, 0, 6, 12 ,2, 7),
+            VoxelShapeStuff.betterShape(12, 0, 7, 13 ,3, 11),
+            VoxelShapeStuff.betterShape(3, 0, 7, 4 ,3, 11)
+    );
 
     protected BackpackBlock(Settings settings) {
         super(settings);
@@ -107,6 +116,11 @@ public class BackpackBlock extends BlockWithEntity implements Waterloggable{
         return ItemStack.EMPTY;
     }
 
+    @Override
+    public BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
+    }
+
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (world.isClient) {
             return ActionResult.SUCCESS;
@@ -145,9 +159,20 @@ public class BackpackBlock extends BlockWithEntity implements Waterloggable{
         return state.rotate(mirror.getRotation(state.get(FACING)));
     }
 
+    public VoxelShape getCullingShape(BlockState state, BlockView world, BlockPos pos) {
+        return SHAPE;
+    }
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return SHAPE;
+    }
+
     static {
         FACING = HorizontalFacingBlock.FACING;
         WATERLOGGED = Properties.WATERLOGGED;
         CONTENTS = new Identifier("contents");
     }
+
+
 }

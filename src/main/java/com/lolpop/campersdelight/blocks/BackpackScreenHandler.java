@@ -14,18 +14,18 @@ public class BackpackScreenHandler extends ScreenHandler {
     private final Inventory inventory;
 
     public BackpackScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(27));
+        this(syncId, playerInventory, new SimpleInventory(18));
     }
 
     public BackpackScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
         super(CampersAdventure.BACKPACK_SCREEN_HANLDER, syncId);
-        checkSize(inventory, 27);
+        checkSize(inventory, 18);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
 
         int o;
         int n;
-        for(o = 0; o < 3; ++o) {
+        for(o = 0; o < 2; ++o) {
             for(n = 0; n < 9; ++n) {
                 this.addSlot(new BackpackSlot(inventory, n + o * 9, 8 + n * 18, 18 + o * 18));
             }
@@ -33,12 +33,12 @@ public class BackpackScreenHandler extends ScreenHandler {
 
         for(o = 0; o < 3; ++o) {
             for(n = 0; n < 9; ++n) {
-                this.addSlot(new Slot(playerInventory, n + o * 9 + 9, 8 + n * 18, 84 + o * 18));
+                this.addSlot(new Slot(playerInventory, n + o * 9 + 9, 8 + n * 18, 66 + o * 18));
             }
         }
 
         for(o = 0; o < 9; ++o) {
-            this.addSlot(new Slot(playerInventory, o, 8 + o * 18, 142));
+            this.addSlot(new Slot(playerInventory, o, 8 + o * 18, 124));
         }
 
     }

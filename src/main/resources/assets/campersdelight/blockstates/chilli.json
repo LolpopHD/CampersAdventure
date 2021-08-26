@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "campersdelight:block/chilli_stage0"
+    },
+    "age=1": {
+      "model": "campersdelight:block/chilli_stage0"
+    },
+    "age=2": {
+      "model": "campersdelight:block/chilli_stage1"
+    },
+    "age=3": {
+      "model": "campersdelight:block/chilli_stage1"
+    },
+    "age=4": {
+      "model": "campersdelight:block/chilli_stage2"
+    },
+    "age=5": {
+      "model": "campersdelight:block/chilli_stage2"
+    },
+    "age=6": {
+      "model": "campersdelight:block/chilli_stage3"
+    },
+    "age=7": {
+      "model": "campersdelight:block/chilli_stage3"
+    }
+  }
+}

@@ -23,11 +23,11 @@ public class BackpackBlockEntity extends LootableContainerBlockEntity implements
 
 
     private DefaultedList<ItemStack> inventory;
-    private static final int[] AVAILABLE_SLOTS = IntStream.range(0, 27).toArray();
+    private static final int[] AVAILABLE_SLOTS = IntStream.range(0, 18).toArray();
 
     public BackpackBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(CampersAdventure.BACKPACK_ENITY, blockPos, blockState);
-        this.inventory = DefaultedList.ofSize(27, ItemStack.EMPTY);
+        this.inventory = DefaultedList.ofSize(18, ItemStack.EMPTY);
     }
 
 

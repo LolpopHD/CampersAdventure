@@ -18,7 +18,7 @@
     ]
   },
   "mixins": [
-    "campersadventure.mixins.json"
+    "campersdelight.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.11.6",
