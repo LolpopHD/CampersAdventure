@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "campersdelight",
   "version": "${version}",
+  "accessWidener": "campersdelight.accesswidener",
   "name": "Campers Delight",
   "description": "",
   "authors": [],
