@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=south": {
       "model": "campersdelight:block/backpack"
+    },
+    "facing=west": {
+      "model": "campersdelight:block/backpack",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "campersdelight:block/backpack",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "campersdelight:block/backpack",
+      "y": 270
     }
   }
 }

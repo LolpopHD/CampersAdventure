@@ -1,4 +1,4 @@
-r{
+{
   "parent": "minecraft:block/crop",
   "textures": {
     "crop": "campersdelight:block/chilli_stage0"

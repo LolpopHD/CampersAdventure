@@ -13,16 +13,21 @@ import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.pattern.CachedBlockPosition;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.recipe.CookingRecipeSerializer;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.screen.ScreenHandlerType;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.LiteralText;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
 
@@ -43,9 +48,15 @@ public class CampersAdventure implements ModInitializer {
         UseBlockCallback.EVENT.register(((player, world, hand, hitResult) -> {
             if(player.getEquippedStack(EquipmentSlot.CHEST).getItem() instanceof BackpackItem && player.isSneaking() && player.getMainHandStack().isEmpty() && hitResult.getSide() == Direction.UP){
                 ItemStack stack = player.getEquippedStack(EquipmentSlot.CHEST);
-                ItemUsageContext itemUsageContext = new BetterUsageContext(world,   player, hand, stack, hitResult);
-                stack.useOnBlock(itemUsageContext);
-                player.equipStack(EquipmentSlot.CHEST, ItemStack.EMPTY);
+                ItemUsageContext context = new BetterUsageContext(world,   player, hand, stack, hitResult);
+                BlockPos pos = context.getBlockPos();
+                BlockState state = context.getWorld().getBlockState(pos);
+                if(state.getBlock().isShapeFullCube(state, context.getWorld(), pos)){
+                    if(stack.useOnBlock(context) == ActionResult.CONSUME){
+                        player.equipStack(EquipmentSlot.CHEST, ItemStack.EMPTY);
+                        player.swingHand(Hand.MAIN_HAND, true);
+                    }
+                }
             }
             return ActionResult.PASS;
         }));

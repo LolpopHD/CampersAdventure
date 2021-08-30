@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " #",
+    "I "
+  ],
+  "key": {
+    "#": {
+      "item": "campersdelight:marshmallow"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "campersdelight:marshmallow_stick",
+    "count": 1
+  }
+}
