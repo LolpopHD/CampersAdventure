@@ -20,10 +20,14 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BackpackBlock extends BlockWithEntity implements Waterloggable{
 
@@ -31,14 +35,12 @@ public class BackpackBlock extends BlockWithEntity implements Waterloggable{
     public static final BooleanProperty WATERLOGGED;
     public static final Identifier CONTENTS;
 
-    public static final VoxelShape SHAPE = VoxelShapeStuff.combineVoxelShapes(
-            VoxelShapeStuff.betterShape(4, 0, 7, 12 ,10, 11),
-            VoxelShapeStuff.betterShape(4, 6, 6, 12 ,10, 7),
-            VoxelShapeStuff.betterShape(7, 3, 6, 9 ,6, 7),
-            VoxelShapeStuff.betterShape(4, 0, 6, 12 ,2, 7),
-            VoxelShapeStuff.betterShape(12, 0, 7, 13 ,3, 11),
-            VoxelShapeStuff.betterShape(3, 0, 7, 4 ,3, 11)
-    );
+    public static final VoxelShape[] SHAPE0 = VoxelShapeStuff.rotationsOf(VoxelShapeStuff.betterBox(4, 0, 7, 12 ,10, 11));
+    public static final VoxelShape[] SHAPE1 = VoxelShapeStuff.rotationsOf(VoxelShapeStuff.betterBox(4, 6, 6, 12 ,10, 7));
+    public static final VoxelShape[] SHAPE2 = VoxelShapeStuff.rotationsOf(VoxelShapeStuff.betterBox(7, 3, 6, 9 ,6, 7));
+    public static final VoxelShape[] SHAPE3 = VoxelShapeStuff.rotationsOf(VoxelShapeStuff.betterBox(4, 0, 6, 12 ,2, 7));
+    public static final VoxelShape[] SHAPE4 = VoxelShapeStuff.rotationsOf(VoxelShapeStuff.betterBox(12, 0, 7, 13 ,3, 11));
+    public static final VoxelShape[] SHAPE5 = VoxelShapeStuff.rotationsOf(VoxelShapeStuff.betterBox(3, 0, 7, 4 ,3, 11));
 
     protected BackpackBlock(Settings settings) {
         super(settings);
@@ -160,12 +162,13 @@ public class BackpackBlock extends BlockWithEntity implements Waterloggable{
     }
 
     public VoxelShape getCullingShape(BlockState state, BlockView world, BlockPos pos) {
-        return SHAPE;
+        int dir = state.get(Properties.HORIZONTAL_FACING).getOpposite().ordinal()-2;
+        return VoxelShapeStuff.combineVoxelShapes(SHAPE0[dir],SHAPE1[dir],SHAPE2[dir],SHAPE3[dir],SHAPE4[dir],SHAPE5[dir]);
     }
 
-    @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return SHAPE;
+        int dir = state.get(Properties.HORIZONTAL_FACING).getOpposite().ordinal()-2;
+        return VoxelShapeStuff.combineVoxelShapes(SHAPE0[dir],SHAPE1[dir],SHAPE2[dir],SHAPE3[dir],SHAPE4[dir],SHAPE5[dir]);
     }
 
     static {

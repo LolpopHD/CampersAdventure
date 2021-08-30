@@ -2,7 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"1": "campersdelight:block/backpack"
+		"1": "campersdelight:block/backpack",
+		"particle": "campersdelight:block/backpack"
 	},
 	"elements": [
 		{
