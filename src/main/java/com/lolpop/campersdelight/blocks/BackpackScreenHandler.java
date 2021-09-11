@@ -27,7 +27,7 @@ public class BackpackScreenHandler extends ScreenHandler {
         int n;
         for(o = 0; o < 2; ++o) {
             for(n = 0; n < 9; ++n) {
-                this.addSlot(new BackpackSlot(inventory, n + o * 9, 8 + n * 18, 18 + o * 18));
+                this.addSlot(new BackpackInventorySlot(inventory, n + o * 9, 8 + n * 18, 18 + o * 18));
             }
         }
 

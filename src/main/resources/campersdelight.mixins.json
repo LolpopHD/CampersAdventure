@@ -4,9 +4,14 @@
   "package": "com.lolpop.campersdelight.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "PlayerEntityMixin",
+    "PlayerInventoryMixin",
+    "PlayerScreenHandlerMixin"
   ],
   "client": [
-    "PlayerEntityRendererMixin"
+    "InventoryScreenMixin",
+    "PlayerEntityRendererMixin",
+    "TexturedRenderLayersMixin"
   ],
   "injectors": {
     "defaultRequire": 1
