@@ -1,5 +1,5 @@
 {
-  "parent": "item/generated",
+  "parent": "item/handheld",
   "textures": {
     "layer0": "campersdelight:item/marshmallow_stick",
     "layer1": "campersdelight:item/marshmallow_stick_top"
