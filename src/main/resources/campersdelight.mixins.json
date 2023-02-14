@@ -4,6 +4,7 @@
   "package": "com.lolpop.campersdelight.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "CreativeInventoryScreenMixin",
     "PlayerEntityMixin",
     "PlayerInventoryMixin",
     "PlayerScreenHandlerMixin"

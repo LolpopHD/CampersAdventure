@@ -1,6 +1,7 @@
-package com.lolpop.campersdelight.blocks;
+package com.lolpop.campersdelight.screenhandler;
 
 import com.lolpop.campersdelight.CampersAdventure;
+import com.lolpop.campersdelight.client.gui.BackpackInventorySlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;

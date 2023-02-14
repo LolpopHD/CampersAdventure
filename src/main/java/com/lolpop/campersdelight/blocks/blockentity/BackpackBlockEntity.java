@@ -1,6 +1,7 @@
-package com.lolpop.campersdelight.blocks;
+package com.lolpop.campersdelight.blocks.blockentity;
 
 import com.lolpop.campersdelight.CampersAdventure;
+import com.lolpop.campersdelight.screenhandler.BackpackScreenHandler;
 import com.lolpop.campersdelight.items.BackpackItem;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.LootableContainerBlockEntity;

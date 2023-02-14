@@ -1,5 +1,6 @@
 package com.lolpop.campersdelight.blocks;
 
+import com.lolpop.campersdelight.blocks.blockentity.BackpackBlockEntity;
 import com.lolpop.campersdelight.duck.BackpackSlotDuckProvider;
 import com.lolpop.campersdelight.items.ItemInit;
 import com.lolpop.campersdelight.utils.VoxelShapeStuff;

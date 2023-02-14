@@ -60,9 +60,9 @@ public class PlayerInventoryMixin implements BackpackSlotDuckProvider {
         if (slot == BackpackSlot.BACKPACK_SLOT_ID) {
             if (backpackStack.isEmpty() && stack.isOf(ItemInit.BACKPACK)) {
                 backpackStack = stack;
-                cir.setReturnValue(stack.getCount());
-            } else {
                 cir.setReturnValue(0);
+            } else {
+                cir.setReturnValue(stack.getCount());
             }
             cir.cancel();
         }

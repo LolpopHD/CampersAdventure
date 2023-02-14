@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "campersdelight:block/sitting_log_dark_oak"
+    },
+    "facing=west": {
+      "model": "campersdelight:block/sitting_log_dark_oak",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "campersdelight:block/sitting_log_dark_oak",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "campersdelight:block/sitting_log_dark_oak",
+      "y": 270
+    }
+  }
+}

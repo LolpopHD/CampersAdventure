@@ -25,4 +25,8 @@ public class BackpackSlot extends Slot {
     public boolean canInsert(ItemStack stack) {
         return stack.isOf(ItemInit.BACKPACK);
     }
+
+    public BackpackCreativeSlot getCreativeVariant() {
+        return new BackpackCreativeSlot(this, this.getIndex(), x, y);
+    }
 }

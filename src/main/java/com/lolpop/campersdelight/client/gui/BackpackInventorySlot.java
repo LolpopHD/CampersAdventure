@@ -1,4 +1,4 @@
-package com.lolpop.campersdelight.blocks;
+package com.lolpop.campersdelight.client.gui;
 
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;

@@ -1,7 +1,7 @@
 package com.lolpop.campersdelight.client.screens;
 
 import com.lolpop.campersdelight.CampersAdventure;
-import com.lolpop.campersdelight.blocks.BackpackScreenHandler;
+import com.lolpop.campersdelight.screenhandler.BackpackScreenHandler;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -11,8 +11,6 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
-import net.minecraft.text.TextColor;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)

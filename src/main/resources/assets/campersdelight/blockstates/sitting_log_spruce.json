@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "campersdelight:block/sitting_log_spruce"
+    },
+    "facing=west": {
+      "model": "campersdelight:block/sitting_log_spruce",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "campersdelight:block/sitting_log_spruce",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "campersdelight:block/sitting_log_spruce",
+      "y": 270
+    }
+  }
+}
